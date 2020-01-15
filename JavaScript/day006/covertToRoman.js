@@ -33,3 +33,5 @@ function convertToRoman(num) {
 
   return roman;
 }
+
+console.log(convertToRoman(3456));
