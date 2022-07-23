@@ -10,9 +10,6 @@ stages = hangman_art.stages
 
 print(hangman_art.logo)
 
-# Testing code
-print(f'Pssst, the solution is {chosen_word}.')
-
 display = ['_' for i in range(0, len(chosen_word))]
 
 while not game_over:
@@ -24,11 +21,12 @@ while not game_over:
 
     if guess not in chosen_word:
         print(f"You guessed {guess}, that's not in the word. You lose a life.")
+        print(lives)
         print(stages[lives])
-        lives -= 1
         if lives == 0:
             game_over = True
-            print("You lose")
+            print(f"You lose, the word is {chosen_word}")
+        lives -= 1
 
     print(' '.join(display))
 
