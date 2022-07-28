@@ -1,5 +1,5 @@
-from  art import logo
-from  random import randint
+from art import logo
+from random import randint
 
 print(logo)
 
@@ -14,7 +14,7 @@ print(f"Pssst ... it's {number}")
 difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ")
 if difficulty == "hard":
     max_turns = 10
-elif  difficulty == "hard":
+elif difficulty == "hard":
     max_turns = 5
 else:
     print("You typed some gibberish ... I give you random amount of attempts")
