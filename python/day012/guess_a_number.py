@@ -12,7 +12,7 @@ print(f"Pssst ... it's {number}")
 
 # Set the difficulty and guesses amount
 difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ")
-if difficulty == "hard":
+if difficulty == "easy":
     max_turns = 10
 elif difficulty == "hard":
     max_turns = 5
@@ -25,9 +25,9 @@ while not game_over and max_turns != 0:
     print(f"You have {max_turns} attempts remaining to guess a number")
     guess = int(input("Make a guess: "))
 
-    if guess < number / 2:
+    if guess < number:
         print("Too low.\nGuess again")
-    elif guess > number / 2:
+    elif guess > number:
         print("Too high.\nGuess again")
     elif guess == number:
         print(f"You got it! The answer was {number}")
