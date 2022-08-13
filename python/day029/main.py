@@ -19,12 +19,14 @@ canvas.grid(row=0, column=1)
 website_text = Label(text="Website:")
 website_text.grid(column=0, row=1)
 website_entry = Entry()
+website_entry.focus()
 website_entry.grid(column=1, columnspan=2, row=1, sticky='we')
 
 # Email/Username row
 emu_text = Label(text="Email/Username:")
 emu_text.grid(column=0, row=2)
 emu_entry = Entry()
+emu_entry.insert(0, "email@example.com")
 emu_entry.grid(column=1, columnspan=2, row=2, sticky='we')
 
 # Password row
