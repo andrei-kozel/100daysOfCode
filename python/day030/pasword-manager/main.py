@@ -59,13 +59,18 @@ def save_password():
         }}
 
         if is_ok and validate:
-            with open("passwords.json", "r") as file:
-                data = json.load(file)
+            try:
+                with open("passwords.json", "r") as file:
+                    data = json.load(file)
+            except FileNotFoundError:
+                with open("passwords.json", "w") as file:
+                    json.dump(data, file, indent=4)
+            else:
                 data.update(new_data)
 
-            with open("passwords.json", "w") as file:
-                json.dump(data, file, indent=4)
-
+                with open("passwords.json", "w") as file:
+                    json.dump(data, file, indent=4)
+            finally:
                 website_entry.delete(0, END)
                 password_entry.delete(0, END)
 
